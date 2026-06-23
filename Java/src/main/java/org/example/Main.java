@@ -16,14 +16,6 @@ public class Main {
             System.out.println("Adresse : " + monHotel.getAdresse());
             System.out.println("-------------------------------\n");
 
-            // 3. Appels des méthodes spécifiques à l'hôtel
-            // (Pour que ces lignes fonctionnent, vous devrez créer et passer des objets Chambre réels)
-
-        /* monHotel.ajouterChambre(maChambre);
-
-        monHotel.afficherChambresLibresAvecLeurType();
-
-        Chambre chambreTrouvee = monHotel.trouverChambreOccupeeParClient(12);
-        */
+           // 3.
         }
 }
