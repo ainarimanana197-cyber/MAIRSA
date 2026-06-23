@@ -3,15 +3,19 @@ package org.example;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+        public static void main(String[] args) {
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
+            // 1. Création de l'objet Hotel
+            Hotel monHotel = new Hotel(1, "MAIRSA Hôtel", "contact@mairsa.com", "0123456789", "Maldives");
+
+            // 2. Affichage des informations de base de l'hôtel pour vérifier la création
+            System.out.println("--- Informations de l'Hôtel ---");
+            System.out.println("Nom : " + monHotel.getNomHotel());
+            System.out.println("Email : " + monHotel.getEmailHotel());
+            System.out.println("Téléphone : " + monHotel.getTelephone());
+            System.out.println("Adresse : " + monHotel.getAdresse());
+            System.out.println("-------------------------------\n");
+
+           // 3.
         }
-    }
 }
