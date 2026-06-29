@@ -47,13 +47,11 @@ public class Hotel {
     }
 
     public void afficherChambresLibresAvecLeurType() {
-        System.out.println("--- Liste des chambres libres ---");
+        System.out.println("Liste des chambres libres : ");
         boolean aucuneChambreLibre = true;
         for (Chambre chambre : listChambres) {
-            // On suppose que Chambre possède la méthode isLibre()
-            if (chambre.estLibre()) {
-                // On affiche le numéro (ou un identifiant) et le type de la chambre
-                System.out.println("Chambre N°" + chambre.getNumero() + " | Type : " + chambre.getType());
+            if (chambre.estDisponible()) {
+                System.out.println("Chambre N°" + Chambre.getNum() + " | Type : " + chambre.getType());
                 aucuneChambreLibre = false;
             }
         }
@@ -62,18 +60,15 @@ public class Hotel {
         }
     }
 
-    // 3. Méthode pour trouver la chambre occupée par un client spécifique (via son ID)
     public Chambre trouverChambreOccupeeParClient(int idClient) {
         for (Chambre chambre : listChambres) {
-            // On vérifie d'abord que la chambre n'est pas libre, puis on vérifie l'ID du client
-            // On suppose que Chambre possède la méthode getClient()
-            if (!chambre.estLibre() && chambre.getClient() != null) {
+            if (!chambre.estDisponible() && Client.getClient() != null) {
                 if (chambre.getClient().getId() == idClient) {
                     return chambre; // Retourne l'objet Chambre si le client est trouvé
                 }
             }
         }
-        return null; // Retourne null si le client ne loge dans aucune chambre
+        return null;
     }
     public List<Chambre> getListChambres() {
         return listChambres;

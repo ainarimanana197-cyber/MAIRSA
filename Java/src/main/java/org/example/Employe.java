@@ -1,6 +1,6 @@
 package org.example;
 
-public class Employe {
+public class Employe{
     private int id;
     private String nomEmploye;
     private String poste;
@@ -30,6 +30,9 @@ public class Employe {
     public double getSalaire() {return salaire;}
     public void setSalaire(double salaire) {this.salaire = salaire;}
 
+    public void assignerEquipe(String typeEquipe) {
+        System.out.println(this.nomEmploye + " a été assigné(e) à l'équipe du : " + typeEquipe);
+    }
     @Override
     public String toString() {
         return "Employe n°"+id + " : " + nomEmploye + "(" + poste + ") - Salaire : " + salaire + "euro";
