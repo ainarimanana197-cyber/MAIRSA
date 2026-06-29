@@ -8,7 +8,7 @@ public class Hotel {
     private String emailHotel;
     private String telephone;
     private String adresse;
-    private List<Chambre> listChambres;
+    private List<org.example.Chambre> listChambres;
 
     public Hotel(int id, String nomHotel, String emailHotel, String telephone, String adresse, List<Chambre> listChambres) {
         this.id = id;
@@ -34,10 +34,10 @@ public class Hotel {
     public String getAdresse() {return adresse;}
     public void setAdresse(String adresse) {this.adresse = adresse;}
 
-    public List<Chambre> getListChambres() {return listChambres;}
-    public void setListChambres(List<Chambre> listChambres) {this.listChambres = listChambres;}
+    public List<org.example.Chambre> getListChambres() {return listChambres;}
+    public void setListChambres(List<org.example.Chambre> listChambres) {this.listChambres = listChambres;}
 
-    public void ajouterChambre(Chambre chambre) {
+    public void ajouterChambre(org.example.Chambre chambre) {
         if (chambre != null) {
             this.listChambres.add(chambre);
             System.out.println("La chambre a été ajoutée avec succès.");
@@ -49,9 +49,9 @@ public class Hotel {
     public void afficherChambresLibresAvecLeurType() {
         System.out.println("Liste des chambres libres : ");
         boolean aucuneChambreLibre = true;
-        for (Chambre chambre : listChambres) {
+        for (org.example.Chambre chambre : listChambres) {
             if (chambre.estDisponible()) {
-                System.out.println("Chambre N°" + Chambre.getNum() + " | Type : " + chambre.getType());
+                System.out.println("Chambre N°" + org.example.Chambre.getNum() + " | Type : " + chambre.getType());
                 aucuneChambreLibre = false;
             }
         }
@@ -60,9 +60,9 @@ public class Hotel {
         }
     }
 
-    public Chambre trouverChambreOccupeeParClient(int idClient) {
-        for (Chambre chambre : listChambres) {
-            if (!chambre.estDisponible() && Client.getClient() != null) {
+    public org.example.Chambre trouverChambreOccupeeParClient(int idClient) {
+        for (org.example.Chambre chambre : listChambres) {
+            if (!chambre.estDisponible() && org.example.Client.getClient() != null) {
                 if (chambre.getClient().getId() == idClient) {
                     return chambre; // Retourne l'objet Chambre si le client est trouvé
                 }
@@ -70,7 +70,7 @@ public class Hotel {
         }
         return null;
     }
-    public List<Chambre> getListChambres() {
+    public List<org.example.Chambre> getListChambres() {
         return listChambres;
     }
 }
