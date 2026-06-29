@@ -50,7 +50,7 @@ public class Hotel {
         System.out.println("--- Liste des chambres libres ---");
         boolean aucuneChambreLibre = true;
         for (Chambre chambre : listChambres) {
-            // On suppose que Chambre possède la méthode isLibre()
+
             if (chambre.estLibre()) {
                 // On affiche le numéro (ou un identifiant) et le type de la chambre
                 System.out.println("Chambre N°" + chambre.getNumero() + " | Type : " + chambre.getType());
