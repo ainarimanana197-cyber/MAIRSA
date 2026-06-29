@@ -15,7 +15,7 @@ public class Reservation {
     private List<Chambre> listChambres;
     private LocalDate dateDebut;
     private LocalDate dateFin;
-    private ModePayment modePayment;
+    private ModePaiement modePayment;
     private double montantTotal;
     private StatutReservation statut;
 
